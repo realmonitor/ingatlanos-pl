@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OS Detection</title>
+</head>
+<body>
+    <script>
+        var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            // iOS detection
+            window.location.href = "https://apps.apple.com/us/app/realcontacts/id6443937750";
+        } else if (/Android/.test(userAgent)) {
+            // Android detection
+            window.location.href = "https://play.google.com/store/apps/details?id=hu.realcontacts.app";
+        }
+    </script>
+    <p>You will be redirected to the appropriate app store</p>
+    <script>
+    setTimeout(function(){
+        window.location.href = "/index.html";
+    }, 3000);
+    </script>
+</body>
+</html>
